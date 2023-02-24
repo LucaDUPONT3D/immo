@@ -7,6 +7,23 @@ body {
     font-family: 'Roboto', serif;
 }
 
+.headerLink{
+    display: flex;
+    align-items: center;
+}
+
+.mainImg{
+    display: inline;
+    filter: invert();
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.title{
+    display: inline;
+}
+
 .flex_div{
     display: flex;
     flex-direction: row;
@@ -41,7 +58,7 @@ a:hover {
 
 img {
     max-width: 100%;
-    min-width: 140px;
+    min-width: auto;
 }
 
 h1, h2, h3, h4 {

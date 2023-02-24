@@ -35,7 +35,7 @@ class ImmoController extends AbstractController
         return $this->render('immo/add.html.twig');
     }
 
-    #[Route('/{id}', name: 'list')]
+    #[Route('/{id}', name: 'show')]
     public function show(Immo $id): Response
     {
         return $this->render('immo/show.html.twig', ['immo' => $id]);

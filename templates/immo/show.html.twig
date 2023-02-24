@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent()}} Details
+{% endblock %}
+
+{% block body %}
+    <h2>Immo's Details</h2>
+    <div class="serie-details">
+        <div class="serie-poster">
+            <img src="{{ asset('img/immo/' ~ immo.picture) }}" alt="{{ immo.name }}">
+        </div>
+        <div class="serie-details-infos">
+            <h2>{{ immo.name }}</h2>
+            <div><b>Superficie en m² : </b>{{ immo.area }}</div>
+            <div><b>Nombre de pièces habitables : </b>{{ immo.habitableRooms }}</div>
+            <div><b>Type de logement : </b>{{ immo.type }}</div>
+            <div><b>Adresse : </b>{{ immo.adress }}</div>
+            <div><b>Piscine : </b>{{ immo.typeswimmingPool }}</div>
+            <div><b>Extérieur : </b>{{ immo.outside }} ({{ immo.outsideArea }})</div>
+            <div><b>Garage : </b>{{  immo.garage }}</div>
+            <div><b>Type de vente : </b>{{ immo.sellType }}</div>
+            <div><b>Prix : </b>{{ immo.price }}</div>
+            <div><b>Date de création de l'annonce : </b>{{ immo.createdDate | date("d-m-Y-H-i-s") }}</div>
+        </div>
+    </div>
+{% endblock %}

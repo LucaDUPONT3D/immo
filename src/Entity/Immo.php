@@ -15,6 +15,12 @@ class Immo
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(length: 50)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $picture = null;
+
     #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2)]
     private ?string $area = null;
 
@@ -52,6 +58,30 @@ class Immo
     {
         return $this->id;
     }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
 
     public function getArea(): ?string
     {
@@ -188,6 +218,6 @@ class Immo
     #[ORM\PrePersist]
     public function setCreatedValue(): void
     {
-        $this->setDateCreated(new \DateTime());
+        $this->setCreatedDate(new \DateTime());
     }
 }
