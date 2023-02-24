@@ -32,7 +32,7 @@ class ImmoController extends AbstractController
             $this->addFlash('success', "Immo added !");
             return $this->redirectToRoute('immo_show', ['id' => $immo->getId()]);
         }
-        return $this->render('immo/add.html.twig');
+        return $this->render('immo/add.html.twig', ['immoForm' => $immoForm->createView()]);
     }
 
     #[Route('/{id}', name: 'show')]

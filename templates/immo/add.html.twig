@@ -5,5 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    AAA
+    {{ form_start(immoForm) }}
+
+    {{ form_widget(immoForm) }}
+    <button>Add</button>
+
+    {{ form_end(immoForm)}}
 {% endblock %}
