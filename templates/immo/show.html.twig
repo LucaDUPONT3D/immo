@@ -16,11 +16,29 @@
             <div><b>Nombre de pièces habitables : </b>{{ immo.habitableRooms }}</div>
             <div><b>Type de logement : </b>{{ immo.type }}</div>
             <div><b>Adresse : </b>{{ immo.adress }}</div>
-            <div><b>Piscine : </b>{{ immo.typeswimmingPool }}</div>
-            <div><b>Extérieur : </b>{{ immo.outside }} ({{ immo.outsideArea }})</div>
-            <div><b>Garage : </b>{{  immo.garage }}</div>
+            <div><b>Piscine : </b>
+                {% if immo.swimmingPool %}
+                    OUI
+                {% else %}
+                    NON
+                {% endif %}
+            </div>
+            <div><b>Extérieur : </b>
+                {% if immo.outside %}
+                    OUI ({{ immo.outsideArea }} m²)
+                {% else %}
+                    NON
+                {% endif %}
+            </div>
+            <div><b>Garage : </b>
+                {% if immo.garage %}
+                    OUI
+                {% else %}
+                NON
+                {% endif %}
+            </div>
             <div><b>Type de vente : </b>{{ immo.sellType }}</div>
-            <div><b>Prix : </b>{{ immo.price }}</div>
+            <div><b>Prix : </b>{{ immo.price }} €</div>
             <div><b>Date de création de l'annonce : </b>{{ immo.createdDate | date("d-m-Y-H-i-s") }}</div>
         </div>
     </div>

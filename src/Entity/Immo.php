@@ -48,7 +48,7 @@ class Immo
     #[ORM\Column(length: 50)]
     private ?string $sellType = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2)]
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $price = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]

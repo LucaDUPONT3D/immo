@@ -18,7 +18,7 @@ class ImmoType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('picture', TextType::class)
-            ->add('area',NumberType::class)
+            ->add('area', NumberType::class)
             ->add('habitableRooms')
             ->add(
                 'type',
@@ -32,11 +32,19 @@ class ImmoType extends AbstractType
             ->add(
                 'swimmingPool',
                 ChoiceType::class,
-                ['choices' => [' ' => true], 'expanded' => true, 'multiple' => true]
+                ['choices' => ['Oui' => true, 'Non'=>false], 'expanded' => false, 'multiple' => false]
             )
-            ->add('outside', ChoiceType::class, ['choices'=>[' ' => true], 'expanded'=>true, 'multiple'=>true])
-            ->add('outsideArea',NumberType::class)
-            ->add('garage', ChoiceType::class, ['choices'=>[' '=>true], 'expanded'=>true, 'multiple'=>true])
+            ->add(
+                'outside',
+                ChoiceType::class,
+                ['choices'=>['Oui' => true, 'Non'=>false], 'expanded'=>false, 'multiple'=>false]
+            )
+            ->add('outsideArea', NumberType::class, ['required'=>false])
+            ->add(
+                'garage',
+                ChoiceType::class,
+                ['choices'=>['Oui' => true, 'Non'=>false], 'expanded'=>false, 'multiple'=>false]
+            )
             ->add('sellType', ChoiceType::class, ['choices' => ['Vente'=>'Vente', 'Location'=>'Location']])
             ->add('price', MoneyType::class)
         ;
